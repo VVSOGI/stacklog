@@ -3,9 +3,12 @@ import { BlogPosts } from 'app/components/posts'
 export default function Page() {
   return (
     <section>
-      <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
-        My Portfolio
-      </h1>
+      <div className="flex mb-8 font-semibold tracking-tighter">
+        <div className="flex flex-col">
+          <h2 className="text-5xl mb-4">프론트엔드 개발자</h2>
+          <h1 className="text-6xl">김우석</h1>
+        </div>
+      </div>
       <p className="mb-4">
         {`I'm a Vim enthusiast and tab advocate, finding unmatched efficiency in
         Vim's keystroke commands and tabs' flexibility for personal viewing
