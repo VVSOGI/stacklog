@@ -1,18 +1,26 @@
+import { LocaleNav, Locales } from '@/types'
+import { getLocales } from '@/utils/getLocales'
 import Link from 'next/link'
 
-const navItems = {
-  '/': {
-    name: '홈'
-  },
-  '/projects': {
-    name: '프로젝트'
-  },
-  '/blog': {
-    name: '블로그'
-  }
+interface Props {
+  locales: Locales
 }
 
-export function Navbar() {
+export async function Navbar({ locales }: Props) {
+  const { home, project, blog } = await getLocales<LocaleNav>('nav', locales)
+
+  const navItems = {
+    '/': {
+      name: home
+    },
+    '/projects': {
+      name: project
+    },
+    '/blog': {
+      name: blog
+    }
+  }
+
   return (
     <aside className="-ml-[8px] mb-4 py-4 tracking-tight">
       <div className="lg:sticky lg:top-20">
