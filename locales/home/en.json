@@ -1,5 +1,20 @@
 {
   "job": "Frontend Developer",
   "name": "Wooseok Kim",
-  "introduce": "I'm a developer with a passion for history, UX, and automation.<br />I believe in giving users the best experience possible, so I focus on user-centered design and intuitive interface implementation and optimization. Deployments include working with domains and SSL environments using Nginx in a Linux cloud environment.<br />And also can write automated deployment scripts via Github actions along the way, and I have experience building software in cycles via cron-tabs."
+  "introduce": "Hello. I'm a developer with a passion for history, UX, and automation.<br />I believe in giving users the best experience possible, so I focus on user-centered design and intuitive interface implementation and optimization. Deployments include working with domains and SSL environments using Nginx in a Linux cloud environment.<br />And also can write automated deployment scripts via Github actions along the way, and I have experience building software in cycles via cron-tabs.",
+  "experience": [
+    {
+      "title": "Experience",
+      "time": "Total 2 years and 2 months",
+      "company": "Belivvr",
+      "company-info": "WebXR Metaverse, AI webtoon platform",
+      "position": "Position",
+      "list": [
+        {
+          "title": "Developed Three JS + WebRTC video calling solution",
+          "contents": "Developed a solution using React, Nestjs, Three JS, and Typescript to provide a new calling experience for users of the then-current Metaverse core VR headset. Modified an open source library with a 1:N sender-receiver relationship and converted it to a 1:1 optimized library. Achieved a bitrate improvement of about 166% (1500 -> 4000) kbps. Then exhibited the product at Metaverse Expo, 82 Startup."
+        }
+      ]
+    }
+  ]
 }
