@@ -7,6 +7,7 @@ interface Props {
 
 export default async function Page({ params: { lang } }: Props) {
   const locale = await getLocales<LocaleHome>('home', lang)
+  const introduces = locale.introduce.split('<br />')
 
   return (
     <section>
@@ -16,7 +17,13 @@ export default async function Page({ params: { lang } }: Props) {
           <h1 className="text-6xl">{locale.name}</h1>
         </div>
       </div>
-      <p className="mb-4 whitespace-pre-line">{locale.introduce}</p>
+      {introduces.map((introduce, index) => {
+        return (
+          <p key={'introduce' + index} className="text-md text-gray-800 whitespace-pre-line">
+            {introduce}
+          </p>
+        )
+      })}
     </section>
   )
 }
