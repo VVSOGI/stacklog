@@ -1,4 +1,5 @@
 {
   "job": "Frontend Developer",
-  "name": "Wooseok Kim"
+  "name": "Wooseok Kim",
+  "introduce": "I'm a developer with a passion for history, UX, and automation. <br /> Focuses on user-centered design and intuitive interface implementation and optimization because I believe in giving users the best experience possible. <br /> Deployments include working with domains and SSL environments using Nginx in a Linux cloud environment. <br />Along the way, you can write automated deployment scripts via Github actions, and you have experience building cyclical software via cron-tabs."
 }
