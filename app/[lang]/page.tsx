@@ -16,13 +16,7 @@ export default async function Page({ params: { lang } }: Props) {
           <h1 className="text-6xl">{locale.name}</h1>
         </div>
       </div>
-      <p className="mb-4">
-        {`I'm a Vim enthusiast and tab advocate, finding unmatched efficiency in
-        Vim's keystroke commands and tabs' flexibility for personal viewing
-        preferences. This extends to my support for static typing, where its
-        early error detection ensures cleaner code, and my preference for dark
-        mode, which eases long coding sessions by reducing eye strain.`}
-      </p>
+      <p className="mb-4 whitespace-pre-line">{locale.introduce}</p>
     </section>
   )
 }
