@@ -6,7 +6,8 @@
   }
 
   h1 {
-    @apply text-6xl font-medium tracking-tighter;
+    @apply text-4xl font-medium tracking-tighter;
+    @apply lg:text-6xl;
   }
 
   h2 {
