@@ -1,5 +1,6 @@
 import { getLocales } from '@/utils/getLocales'
 import { LocaleHome, Locales } from '@/types'
+import { Experience } from '@/components'
 
 interface Props {
   params: { lang: Locales }
@@ -10,20 +11,23 @@ export default async function Page({ params: { lang } }: Props) {
   const introduces = locale.introduce.split('<br />')
 
   return (
-    <section>
-      <div className="flex mb-8 font-semibold tracking-tighter">
-        <div className="flex flex-col">
-          <h2 className="text-5xl mb-4">{locale.job}</h2>
-          <h1 className="text-6xl">{locale.name}</h1>
+    <section className="flex flex-col gap-8">
+      <div className="mt-4">
+        <div className="flex flex-col gap-2 h1">
+          <h1>{locale.job}</h1>
+          <h1>{locale.name}</h1>
+        </div>
+        <div className="my-8">
+          {introduces.map((introduce, index) => {
+            return <p key={'introduce' + index}>{introduce}</p>
+          })}
         </div>
       </div>
-      {introduces.map((introduce, index) => {
-        return (
-          <p key={'introduce' + index} className="text-md text-gray-800 whitespace-pre-line">
-            {introduce}
-          </p>
-        )
-      })}
+      <div>
+        {locale.experience.map((experience) => {
+          return <Experience info={experience} />
+        })}
+      </div>
     </section>
   )
 }
