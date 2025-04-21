@@ -17,6 +17,10 @@
         {
           "title": "AI webtoon platform service front development",
           "contents": "Developed on platform service front-end development, deployment, API design, and schedule management. Aimed to create a mobile-optimized web app. Worked on the front end that users use and supported back-office work. Used Intersection Observer for infinite scrolling to naturally display large amounts of images, developed multilingual support and IP-based nationality checking."
+        },
+        {
+          "title": "Mozilla hubs (React 3D metaverse space), Spoke (React 3D metaverse space authoring tool) open source library feature additions and refactorings",
+          "contents": "Worked on additional features for in-house design teams using XR space creation tools Mozilla hubs, spoke, and restored the Asset Store feature of Spoke, which was not being used due to an existing error. Added multi-language support and created a location-based 3D component that changes assets in real-time when the user swaps glft."
         }
       ]
     }
