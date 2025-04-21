@@ -25,7 +25,7 @@ export default async function Page({ params: { lang } }: Props) {
       </div>
       <div>
         {locale.experience.map((experience) => {
-          return <Experience info={experience} />
+          return <Experience key={experience.company} info={experience} />
         })}
       </div>
     </section>
