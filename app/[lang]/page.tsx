@@ -24,7 +24,11 @@ export default async function Page({ params: { lang } }: Props) {
         </div>
       </div>
       <div>
-        {locale.experience.map((experience) => {
+        <div className="flex gap-4 items-end mb-8">
+          <h1>{locale.title}</h1>
+          <h5>{locale.time}</h5>
+        </div>
+        {locale.careers.map((experience) => {
           return <Experience key={experience.company} info={experience} />
         })}
       </div>

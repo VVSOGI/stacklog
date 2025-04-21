@@ -6,9 +6,9 @@ export interface LocaleHome {
   job: string
   name: string
   introduce: string
-  experience: {
-    title: string
-    time: string
+  title: string
+  time: string
+  careers: {
     company: string
     'company-info': string
     position: string

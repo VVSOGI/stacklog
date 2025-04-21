@@ -2,16 +2,12 @@ import { LocaleHome } from '@/types'
 import React from 'react'
 
 interface Props {
-  info: LocaleHome['experience'][number]
+  info: LocaleHome['careers'][number]
 }
 
 export function Experience({ info }: Props) {
   return (
     <div key={info.company}>
-      <div className="flex gap-4 items-end mb-8">
-        <h1>{info.title}</h1>
-        <h5>{info.time}</h5>
-      </div>
       <div className="flex flex-col gap-1 mb-8">
         <div className="flex gap-4 items-center">
           <h4>{info.company}</h4>
