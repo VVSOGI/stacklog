@@ -12,7 +12,7 @@ export interface LocaleHome {
     company: string
     'company-info': string
     position: string
-    list: { title: string; contents: string }[]
+    list: { title: string; contents: string[] }[]
   }[]
 }
 

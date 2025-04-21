@@ -12,19 +12,27 @@
       "list": [
         {
           "title": "Developed Three JS + WebRTC video calling solution",
-          "contents": "Developed a solution using React, Nestjs, Three JS, and Typescript to provide a new calling experience for users of the then-current Metaverse core VR headset. Modified an open source library with a 1:N sender-receiver relationship and converted it to a 1:1 optimized library. Achieved a bitrate improvement of about 166% (1500 -> 4000) kbps. Then exhibited the product at Metaverse Expo, 82 Startup."
+          "contents": [
+            "Developed a solution using React, Nestjs, Three JS, and Typescript to provide a new calling experience for users of the then-current Metaverse core VR headset. Modified an open source library with a 1:N sender-receiver relationship and converted it to a 1:1 optimized library. Achieved a bitrate improvement of about 166% (1500 -> 4000) kbps. Then exhibited the product at Metaverse Expo, 82 Startup."
+          ]
         },
         {
           "title": "AI webtoon platform service front development",
-          "contents": "Developed on platform service front-end development, deployment, API design, and schedule management. Aimed to create a mobile-optimized web app. Worked on the front end that users use and supported back-office work. Used Intersection Observer for infinite scrolling to naturally display large amounts of images, developed multilingual support and IP-based nationality checking."
+          "contents": [
+            "Developed on platform service front-end development, deployment, API design, and schedule management. Aimed to create a mobile-optimized web app. Worked on the front end that users use and supported back-office work. Used Intersection Observer for infinite scrolling to naturally display large amounts of images, developed multilingual support and IP-based nationality checking."
+          ]
         },
         {
           "title": "Mozilla hubs (React 3D metaverse space), Spoke (React 3D metaverse space authoring tool) open source library feature additions and refactorings",
-          "contents": "Worked on additional features for in-house design teams using XR space creation tools Mozilla hubs, spoke, and restored the Asset Store feature of Spoke, which was not being used due to an existing error. Added multi-language support and created a location-based 3D component that changes assets in real-time when the user swaps glft."
+          "contents": [
+            "Worked on additional features for in-house design teams using XR space creation tools Mozilla hubs, spoke, and restored the Asset Store feature of Spoke, which was not being used due to an existing error. Added multi-language support and created a location-based 3D component that changes assets in real-time when the user swaps glft."
+          ]
         },
         {
           "title": "Working with Mozilla hubs Elixir-based server APIs and resolving gimbalock errors",
-          "contents": "Added the ability to change a component's 3D Asset without using Spoke (a React 3D metaverse space creation tool), using only a gltf file, component ID, and Z-value. Found an error that caused 3D components to be flipped 180 degrees during operation. This error was caused by the existing spoke saving components based on Euler angles, but saving them as quaternionic angles. Added a function to change Euler angles to Quaternian angles and fixed the issue."
+          "contents": [
+            "Added the ability to change a component's 3D Asset without using Spoke (a React 3D metaverse space creation tool), using only a gltf file, component ID, and Z-value. Found an error that caused 3D components to be flipped 180 degrees during operation. This error was caused by the existing spoke saving components based on Euler angles, but saving them as quaternionic angles. Added a function to change Euler angles to Quaternian angles and fixed the issue."
+          ]
         }
       ]
     }
