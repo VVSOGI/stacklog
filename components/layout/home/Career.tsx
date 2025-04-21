@@ -5,7 +5,7 @@ interface Props {
   info: LocaleHome['careers'][number]
 }
 
-export function Experience({ info }: Props) {
+export function Career({ info }: Props) {
   return (
     <div key={info.company}>
       <div className="flex flex-col gap-1 mb-8">
@@ -20,12 +20,15 @@ export function Experience({ info }: Props) {
         </div>
       </div>
       <div className="prose">
-        {info.list.map((item) => {
+        {info.list.map((item, index) => {
           return (
             <ul key={item.title}>
               <li>
                 <div>{item.title}</div>
-                <p>{item.contents}</p>
+                <p></p>
+                {item.contents.map((content, contentIndex) => {
+                  return <p key={index + contentIndex}>{content}</p>
+                })}
               </li>
             </ul>
           )

@@ -1,6 +1,6 @@
 import { getLocales } from '@/utils/getLocales'
 import { LocaleHome, Locales } from '@/types'
-import { Experience } from '@/components'
+import { Career } from '@/components'
 
 interface Props {
   params: { lang: Locales }
@@ -27,9 +27,14 @@ export default async function Page({ params: { lang } }: Props) {
         <div className="flex gap-4 items-end mb-8">
           <h1>{locale.title}</h1>
           <h5>{locale.time}</h5>
+          <div className="flex gap-2">
+            <img src="https://img.shields.io/badge/React.js-222222?style=flat-square&logo=react" alt="React Badge" />
+            <img src="https://img.shields.io/badge/Next.js-222222?style=flat-square&logo=nextdotjs&logoColor=white" alt="React Badge" />
+            <img src="https://img.shields.io/badge/-NestJs-222222?style=flat-square&logo=nestjs&logoColor=ea2845" alt="React Badge" />
+          </div>
         </div>
         {locale.careers.map((experience) => {
-          return <Experience key={experience.company} info={experience} />
+          return <Career key={experience.company} info={experience} />
         })}
       </div>
     </section>
