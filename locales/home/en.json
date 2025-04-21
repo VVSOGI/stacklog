@@ -13,6 +13,10 @@
         {
           "title": "Developed Three JS + WebRTC video calling solution",
           "contents": "Developed a solution using React, Nestjs, Three JS, and Typescript to provide a new calling experience for users of the then-current Metaverse core VR headset. Modified an open source library with a 1:N sender-receiver relationship and converted it to a 1:1 optimized library. Achieved a bitrate improvement of about 166% (1500 -> 4000) kbps. Then exhibited the product at Metaverse Expo, 82 Startup."
+        },
+        {
+          "title": "AI webtoon platform service front development",
+          "contents": "Developed on platform service front-end development, deployment, API design, and schedule management. Aimed to create a mobile-optimized web app. Worked on the front end that users use and supported back-office work. Used Intersection Observer for infinite scrolling to naturally display large amounts of images, developed multilingual support and IP-based nationality checking."
         }
       ]
     }
