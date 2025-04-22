@@ -26,6 +26,10 @@
     @apply text-2xl font-[400] tracking-tighter;
   }
 
+  h6 {
+    @apply text-xl font-[400] tracking-tighter text-gray-700;
+  }
+
   p {
     @apply text-gray-800 whitespace-pre-line;
   }
