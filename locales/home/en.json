@@ -36,5 +36,26 @@
         }
       ]
     }
-  ]
+  ],
+  "portfolio": {
+    "title": "Portfolio",
+    "list": [
+      {
+        "title": "Doke",
+        "source": "https://github.com/vvsogi/doke",
+        "badges": ["nextjs", "nestjs", "typescript", "jest", "docker", "shell"],
+        "description": "Open source library for auto-documenting RESTful APIs",
+        "images": [
+          { "url": "/images/doke-example.png", "alt": "Doke" },
+          { "url": "/images/swagger-example.png", "alt": "Swagger" }
+        ],
+        "contents": [
+          "Doke is a library that aims to automatically document RESTful APIs. A similar library is Swagger. While communicating API documentation between companies, we realized the lack of UI aspects of Swagger and saw the need for an alternative automated documentation tool, so we built it ourselves. The library uses Nest JS's Custom Decorator and Nest js's DiscoveryModule to automatically collect the data needed to create documentation. The user only needs to write a description of each endpoint and Request Parameters and run the command to get an API Docs page with a design favorable for external publication",
+          "Swagger is hard to modify when you have a UI you want to emphasize, but with Doke, it's not hard: you can clone the doke-ui package and customize it with the UI you want",
+          "The library has CLI packages for building and deploying UI to increase DX. Once you get the JSON documentation via doke-nest, build an optimized webapp based on it. Since we build based on the standalone mode of Next js, the image file of doke-ui is about 10 times lighter at 182MB, while the Docker image of traditional webapps is 1GB to 2GB in size",
+          "All modules in doke-nest have been written and passed tests with Jest and verified for stability."
+        ]
+      }
+    ]
+  }
 }
