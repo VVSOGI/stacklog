@@ -1,4 +1,4 @@
-export type Badge = 'react' | 'nextjs' | 'nestjs' | 'docker' | 'jest' | 'typescript'
+export type Badge = 'react' | 'nextjs' | 'nestjs' | 'docker' | 'jest' | 'typescript' | 'shell'
 
 const badgeConfig: Record<Badge, { name: string; logo: string; logoColor?: string }> = {
   react: { name: 'React.js', logo: 'react' },
@@ -6,7 +6,8 @@ const badgeConfig: Record<Badge, { name: string; logo: string; logoColor?: strin
   nestjs: { name: 'NestJs', logo: 'nestjs', logoColor: 'ea2845' },
   docker: { name: 'Docker', logo: 'docker', logoColor: '257bd6' },
   jest: { name: 'Jest', logo: 'Jest', logoColor: 'white' },
-  typescript: { name: 'TypeScript', logo: 'typescript', logoColor: '3178C6' }
+  typescript: { name: 'TypeScript', logo: 'typescript', logoColor: '3178C6' },
+  shell: { name: 'Shell', logo: 'gnu-bash', logoColor: '4EAA25' }
 }
 
 interface Props {

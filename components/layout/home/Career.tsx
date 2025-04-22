@@ -7,7 +7,7 @@ interface Props {
 }
 
 export function Career({ info }: Props) {
-  const badges: Badge[] = ['react', 'nestjs', 'nextjs', 'typescript', 'jest', 'docker']
+  const badges: Badge[] = ['react', 'nestjs', 'nextjs', 'typescript', 'jest', 'docker', 'shell']
 
   return (
     <div key={info.company}>
