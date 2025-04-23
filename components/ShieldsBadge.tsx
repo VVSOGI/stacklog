@@ -1,4 +1,4 @@
-export type Badge = 'react' | 'nextjs' | 'nestjs' | 'docker' | 'jest' | 'typescript' | 'shell'
+export type Badge = 'react' | 'nextjs' | 'nestjs' | 'docker' | 'jest' | 'typescript' | 'shell' | 'tailwind'
 
 const badgeConfig: Record<Badge, { name: string; logo: string; logoColor?: string }> = {
   react: { name: 'React.js', logo: 'react' },
@@ -7,7 +7,8 @@ const badgeConfig: Record<Badge, { name: string; logo: string; logoColor?: strin
   docker: { name: 'Docker', logo: 'docker', logoColor: '257bd6' },
   jest: { name: 'Jest', logo: 'Jest', logoColor: 'white' },
   typescript: { name: 'TypeScript', logo: 'typescript', logoColor: '3178C6' },
-  shell: { name: 'Shell', logo: 'gnu-bash', logoColor: '4EAA25' }
+  shell: { name: 'Shell', logo: 'gnu-bash', logoColor: '4EAA25' },
+  tailwind: { name: 'TailwindCSS', logo: 'tailwindcss', logoColor: '38B2AC' }
 }
 
 interface Props {
@@ -18,7 +19,11 @@ export function ShieldsBadge({ badges }: Props) {
   return (
     <div className="flex flex-wrap gap-2 mb-8">
       {badges.map((badgeKey) => {
-        const badge = badgeConfig[badgeKey]
+        const badge = badgeConfig[badgeKey] || {
+          name: badgeKey,
+          logo: 'javascript',
+          logoColor: 'F7DF1E'
+        }
         return (
           <img
             key={badgeKey}
