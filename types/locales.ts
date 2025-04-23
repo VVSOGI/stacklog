@@ -23,7 +23,7 @@ export interface LocaleHome {
       source: string
       badges: Badge[]
       description: string
-      images: { url: string; alt: string }[]
+      images: { grid: number; list: { url: string; alt: string }[] }
       contents: string[]
     }[]
   }

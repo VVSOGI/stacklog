@@ -45,10 +45,13 @@
         "source": "https://github.com/vvsogi/doke",
         "badges": ["nextjs", "nestjs", "typescript", "jest", "docker", "shell"],
         "description": "Open source library for auto-documenting RESTful APIs",
-        "images": [
-          { "url": "/images/doke-example.png", "alt": "Doke" },
-          { "url": "/images/swagger-example.png", "alt": "Swagger" }
-        ],
+        "images": {
+          "grid": 2,
+          "list": [
+            { "url": "/images/doke-example.png", "alt": "Doke" },
+            { "url": "/images/swagger-example.png", "alt": "Swagger" }
+          ]
+        },
         "contents": [
           "Doke is a library that aims to automatically document RESTful APIs. A similar library is Swagger. While communicating API documentation between companies, we realized the lack of UI aspects of Swagger and saw the need for an alternative automated documentation tool, so we built it ourselves. The library uses Nest JS's Custom Decorator and Nest js's DiscoveryModule to automatically collect the data needed to create documentation. The user only needs to write a description of each endpoint and Request Parameters and run the command to get an API Docs page with a design favorable for external publication",
           "Swagger is hard to modify when you have a UI you want to emphasize, but with Doke, it's not hard: you can clone the doke-ui package and customize it with the UI you want",
@@ -61,12 +64,16 @@
         "source": "https://github.com/VVSOGI/todolist-remake",
         "badges": ["nextjs", "tailwind", "nestjs", "typia", "typescript", "jest", "docker", "shell"],
         "description": "Mono repository todolist web app",
-        "images": [
-          { "url": "images/todolist-1.png", "alt": "todolist-1" },
-          { "url": "images/todolist-2.png", "alt": "todolist-2" },
-          { "url": "images/todolist-3.png", "alt": "todolist-3" },
-          { "url": "images/todolist-4.png", "alt": "todolist-4" }
-        ],
+        "images": {
+          "grid": 3,
+          "list": [
+            { "url": "images/todolist-1.png", "alt": "todolist-1" },
+            { "url": "images/todolist-2.png", "alt": "todolist-2" },
+            { "url": "images/todolist-3.png", "alt": "todolist-3" },
+            { "url": "images/todolist-4.png", "alt": "todolist-4" },
+            { "url": "images/todolist-5.png", "alt": "todolist-5" }
+          ]
+        },
         "contents": [
           "'It's important for developers to have the experience of recreating a project they've made before.' Toodoo List web apps are often made to evaluate their skills. This Toodoo List was made in late 2024 and is a mono-repository using yarn. We used Storybook for component test code on the frontend and Jest + typia on the backend for more rigorous unit testing",
           "Typia is a library that allows you to type check in real-time, even after build. The idea behind this library is to use the validator that validates our DTOs as a single object instead of splitting it between testing and production use. In traditional testing, you decide both the test example and the outcome, and then write the code between them, which reduces the value and reliability of the test because you only need to write the code to produce the outcome. We believe that real test code is when you test against an object target that takes data from real users, validates your code, and allows them to fill in the edge cases of that validation object, and that's what we've done with Typia",
