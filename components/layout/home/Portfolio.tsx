@@ -26,7 +26,7 @@ export function Portfolio({ portfolio }: Props) {
       <div
         className={`
           hidden
-          sm:grid sm:grid-cols-${portfolio.images.grid}
+          sm:grid sm:grid-cols-${portfolio.images.grid} sm:gap-4
         `}
       >
         {portfolio.images.list.map((image) => {

@@ -1,4 +1,4 @@
-export type Badge = 'react' | 'nextjs' | 'nestjs' | 'docker' | 'jest' | 'typescript' | 'shell' | 'tailwind'
+export type Badge = 'react' | 'nextjs' | 'nestjs' | 'docker' | 'jest' | 'typescript' | 'shell' | 'tailwind' | 'chromeExtension'
 
 const badgeConfig: Record<Badge, { name: string; logo: string; logoColor?: string }> = {
   react: { name: 'React.js', logo: 'react' },
@@ -8,7 +8,8 @@ const badgeConfig: Record<Badge, { name: string; logo: string; logoColor?: strin
   jest: { name: 'Jest', logo: 'Jest', logoColor: 'white' },
   typescript: { name: 'TypeScript', logo: 'typescript', logoColor: '3178C6' },
   shell: { name: 'Shell', logo: 'gnu-bash', logoColor: '4EAA25' },
-  tailwind: { name: 'TailwindCSS', logo: 'tailwindcss', logoColor: '38B2AC' }
+  tailwind: { name: 'TailwindCSS', logo: 'tailwindcss', logoColor: '38B2AC' },
+  chromeExtension: { name: 'Chrome_Extension', logo: 'google-chrome', logoColor: 'white' }
 }
 
 interface Props {
@@ -27,7 +28,7 @@ export function ShieldsBadge({ badges }: Props) {
         return (
           <img
             key={badgeKey}
-            src={`https://img.shields.io/badge/${badge.name}-222222?style=flat-square&logo=${badge.logo}${badge.logoColor ? `&logoColor=${badge.logoColor}` : ''}`}
+            src={`https://img.shields.io/badge/${badge.name}-222222?logo=${badge.logo}${badge.logoColor ? `&logoColor=${badge.logoColor}` : ''}`}
             alt={`${badge.name} Badge`}
           />
         )
