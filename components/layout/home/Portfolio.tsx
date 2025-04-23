@@ -25,14 +25,14 @@ export function Portfolio({ portfolio }: Props) {
       <ShieldsBadge badges={portfolio.badges} />
       <div
         className={`
-          grid grid-cols-1
-          md:grid-cols-2
+          hidden
+          sm:grid sm:grid-cols-${portfolio.images.grid} sm:gap-4
         `}
       >
-        {portfolio.images.map((image) => {
+        {portfolio.images.list.map((image) => {
           return (
             <div key={image.alt} className="flex flex-col items-center">
-              <img className="w-full h-full" src={image.url} alt={image.alt} />
+              <img className="w-full h-full object-contain" src={image.url} alt={image.alt} />
               <p className="text-sm text-gray-600">{image.alt}</p>
             </div>
           )
