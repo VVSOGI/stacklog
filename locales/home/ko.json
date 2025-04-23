@@ -46,6 +46,7 @@
         "source": "https://github.com/vvsogi/doke",
         "badges": ["nextjs", "nestjs", "typescript", "jest", "docker", "shell"],
         "description": "RESTful API 자동 문서화 오픈소스 라이브러리",
+        "motivate": "Swagger를 뛰어넘는 자동 문서화 오픈소스 라이브러리를 제작해보자!",
         "images": {
           "grid": 2,
           "list": [
@@ -65,6 +66,7 @@
         "source": "https://github.com/VVSOGI/todolist-remake",
         "badges": ["nextjs", "tailwind", "nestjs", "typia", "typescript", "jest", "docker", "shell"],
         "description": "모노 레포지토리 투두리스트 웹앱",
+        "motivate": "주기적 코드 실력 검증 및 엄격한 테스트 환경 구현해보기",
         "images": {
           "grid": 3,
           "list": [
@@ -90,6 +92,7 @@
         "source": "https://github.com/VVSOGI/picture-in-picture-from-korea",
         "badges": ["chromeExtension", "Javascript"],
         "description": "Google Picture-in-Picture Extension 기능 확장 버전",
+        "motivate": "Google Picture-in-Picture Extension는 tab과 storage를 사용하면 더 발전할 수 있다",
         "images": {
           "grid": 2,
           "list": [

@@ -20,7 +20,8 @@ export function Portfolio({ portfolio }: Props) {
         >
           {portfolio.title}
         </a>
-        <h6>{portfolio.description}</h6>
+        <h5>{portfolio.description}</h5>
+        <h6>{portfolio.motivate}</h6>
       </div>
       <ShieldsBadge badges={portfolio.badges} />
       <div

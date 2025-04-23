@@ -39,12 +39,14 @@
   ],
   "portfolio": {
     "title": "Portfolio",
+    "reason": "Motivated",
     "list": [
       {
         "title": "Doke",
         "source": "https://github.com/vvsogi/doke",
         "badges": ["nextjs", "nestjs", "typescript", "jest", "docker", "shell"],
         "description": "Open source library for auto-documenting RESTful APIs",
+        "motivate": "Let's build a self-documenting open source library that goes beyond Swagger!",
         "images": {
           "grid": 2,
           "list": [
@@ -64,6 +66,7 @@
         "source": "https://github.com/VVSOGI/todolist-remake",
         "badges": ["nextjs", "tailwind", "nestjs", "typia", "typescript", "jest", "docker", "shell"],
         "description": "Mono repository todolist web app",
+        "motivate": "Implement a periodic code proficiency validation and rigorous testing environment",
         "images": {
           "grid": 3,
           "list": [
@@ -89,8 +92,9 @@
         "source": "https://github.com/VVSOGI/picture-in-picture-from-korea",
         "badges": ["chromeExtension", "Javascript"],
         "description": "Extended version of Google Picture-in-Picture Extension",
+        "motivate": "Google Picture-in-Picture Extension could be better with tabs and storage",
         "images": {
-          "grid": 3,
+          "grid": 2,
           "list": [
             { "url": "images/pip/pip-1.png", "alt": "Promo image" },
             { "url": "images/pip/pip-2.gif", "alt": "Free change to Alt + P in any tab" }

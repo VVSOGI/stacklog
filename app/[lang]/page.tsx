@@ -1,6 +1,6 @@
 import { getLocales } from '@/utils/getLocales'
 import { LocaleHome, Locales } from '@/types'
-import { Badge, Career, Portfolio } from '@/components'
+import { Career, Portfolio } from '@/components'
 
 interface Props {
   params: { lang: Locales }
@@ -9,16 +9,15 @@ interface Props {
 export default async function Page({ params: { lang } }: Props) {
   const locale = await getLocales<LocaleHome>('home', lang)
   const introduces = locale.introduce.split('<br />')
-  const dokeBadges: Badge[] = ['nextjs', 'nestjs', 'typescript', 'jest', 'docker', 'shell']
 
   return (
-    <section className="flex flex-col gap-8">
+    <section className="flex flex-col gap-16">
       <div className="mt-4">
         <div className="flex flex-col gap-2 h1">
           <h1>{locale.job}</h1>
           <h1>{locale.name}</h1>
         </div>
-        <div className="my-8">
+        <div className="mt-8">
           {introduces.map((introduce, index) => {
             return <p key={'introduce' + index}>{introduce}</p>
           })}
