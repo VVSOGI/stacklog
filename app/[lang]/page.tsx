@@ -12,13 +12,13 @@ export default async function Page({ params: { lang } }: Props) {
   const dokeBadges: Badge[] = ['nextjs', 'nestjs', 'typescript', 'jest', 'docker', 'shell']
 
   return (
-    <section className="flex flex-col gap-8">
+    <section className="flex flex-col gap-16">
       <div className="mt-4">
         <div className="flex flex-col gap-2 h1">
           <h1>{locale.job}</h1>
           <h1>{locale.name}</h1>
         </div>
-        <div className="my-8">
+        <div className="mt-8">
           {introduces.map((introduce, index) => {
             return <p key={'introduce' + index}>{introduce}</p>
           })}
