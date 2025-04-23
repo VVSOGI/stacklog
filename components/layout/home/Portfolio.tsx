@@ -7,7 +7,7 @@ interface Props {
 
 export function Portfolio({ portfolio }: Props) {
   return (
-    <div>
+    <div className="mb-8">
       <div className="flex flex-col gap-2 mb-4">
         <a
           className={`
@@ -21,8 +21,8 @@ export function Portfolio({ portfolio }: Props) {
           {portfolio.title}
         </a>
         <h6>{portfolio.description}</h6>
-        <ShieldsBadge badges={portfolio.badges} />
       </div>
+      <ShieldsBadge badges={portfolio.badges} />
       <div
         className={`
           grid grid-cols-1
@@ -41,7 +41,7 @@ export function Portfolio({ portfolio }: Props) {
       <div className="prose">
         <ul>
           {portfolio.contents.map((content, index) => {
-            return <li className={portfolio.title + index}>{content}</li>
+            return <li key={portfolio.title + index}>{content}</li>
           })}
         </ul>
       </div>

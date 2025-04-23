@@ -38,7 +38,7 @@ export default async function Page({ params: { lang } }: Props) {
       <div>
         <h2 className="mb-4">{locale.portfolio.title}</h2>
         {locale.portfolio.list.map((portfolio) => {
-          return <Portfolio portfolio={portfolio} />
+          return <Portfolio key={portfolio.title} portfolio={portfolio} />
         })}
       </div>
     </section>
