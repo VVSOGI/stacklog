@@ -32,7 +32,7 @@ export function Portfolio({ portfolio }: Props) {
         {portfolio.images.map((image) => {
           return (
             <div key={image.alt} className="flex flex-col items-center">
-              <img src={image.url} alt={image.alt} />
+              <img className="w-full h-full" src={image.url} alt={image.alt} />
               <p className="text-sm text-gray-600">{image.alt}</p>
             </div>
           )
