@@ -55,6 +55,22 @@
           "The library has CLI packages for building and deploying UI to increase DX. Once you get the JSON documentation via doke-nest, build an optimized webapp based on it. Since we build based on the standalone mode of Next js, the image file of doke-ui is about 10 times lighter at 182MB, while the Docker image of traditional webapps is 1GB to 2GB in size",
           "All modules in doke-nest have been written and passed tests with Jest and verified for stability."
         ]
+      },
+      {
+        "title": "Todolist remake",
+        "source": "https://github.com/VVSOGI/todolist-remake",
+        "badges": ["nextjs", "tailwind", "nestjs", "typia", "typescript", "jest", "docker", "shell"],
+        "description": "Mono repository todolist web app",
+        "images": [],
+        "contents": [
+          "'It's important for developers to have the experience of recreating a project they've made before.' Toodoo List web apps are often made to evaluate their skills. This Toodoo List was made in late 2024 and is a mono-repository using yarn. We used Storybook for component test code on the frontend and Jest + typia on the backend for more rigorous unit testing",
+          "Typia is a library that allows you to type check in real-time, even after build. The idea behind this library is to use the validator that validates our DTOs as a single object instead of splitting it between testing and production use. In traditional testing, you decide both the test example and the outcome, and then write the code between them, which reduces the value and reliability of the test because you only need to write the code to produce the outcome. We believe that real test code is when you test against an object target that takes data from real users, validates your code, and allows them to fill in the edge cases of that validation object, and that's what we've done with Typia",
+          "We validated the tests against the actual working DTO validation objects and the test cases corresponding to the edge cases, which resulted in 41 more rigorous test cases. As the number of test cases increases, the reliability of the server behavior increases, so there is a linear upward proportional relationship between the number and the reliability of the server behavior",
+          "On the server, we wrote the progression of the API process between endpoints via PlantUML",
+          "The frontend was managed by packaging redundant code to address the increasing overall size of the project and the issue of component sharing with storybooks. The above process decoupled a large amount of code, which resulted in a 38.6% reduction in frontend docker build time.",
+          "To efficiently use the Presenter Container pattern in Next js, I created a Presenter called Display that is represented on each page, and used custom hooks as Containers in situations where I needed to receive and process data from the server. As much as possible, I wrote the Presenter to only rely on receiving data.",
+          "Frontend, Backend, DB, and Stories servers are all managed as Docker containers. To make it more efficient, I've automated the build deployment of each server with a single command using shell scripts and docker-compose."
+        ]
       }
     ]
   }
