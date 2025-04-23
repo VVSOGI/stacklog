@@ -18,9 +18,11 @@ export interface LocaleHome {
   }[]
   portfolio: {
     title: string
+    reason: string
     list: {
       title: string
       source: string
+      motivate: string
       badges: Badge[]
       description: string
       images: { grid: number; list: { url: string; alt: string }[] }
