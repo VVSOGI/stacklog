@@ -48,8 +48,8 @@
         "images": {
           "grid": 2,
           "list": [
-            { "url": "/images/doke-example.png", "alt": "Doke" },
-            { "url": "/images/swagger-example.png", "alt": "Swagger" }
+            { "url": "images/doke/doke-example.png", "alt": "Doke" },
+            { "url": "images/doke/swagger-example.png", "alt": "Swagger" }
           ]
         },
         "contents": [
@@ -67,11 +67,11 @@
         "images": {
           "grid": 3,
           "list": [
-            { "url": "images/todolist-1.png", "alt": "todolist-1" },
-            { "url": "images/todolist-2.png", "alt": "todolist-2" },
-            { "url": "images/todolist-3.png", "alt": "todolist-3" },
-            { "url": "images/todolist-4.png", "alt": "todolist-4" },
-            { "url": "images/todolist-5.png", "alt": "todolist-5" }
+            { "url": "images/todolist/todolist-1.png", "alt": "todolist-1" },
+            { "url": "images/todolist/todolist-2.png", "alt": "todolist-2" },
+            { "url": "images/todolist/todolist-3.png", "alt": "todolist-3" },
+            { "url": "images/todolist/todolist-4.png", "alt": "todolist-4" },
+            { "url": "images/todolist/todolist-5.png", "alt": "todolist-5" }
           ]
         },
         "contents": [
@@ -82,6 +82,25 @@
           "The frontend was managed by packaging redundant code to address the increasing overall size of the project and the issue of component sharing with storybooks. The above process decoupled a large amount of code, which resulted in a 38.6% reduction in frontend docker build time.",
           "To efficiently use the Presenter Container pattern in Next js, I created a Presenter called Display that is represented on each page, and used custom hooks as Containers in situations where I needed to receive and process data from the server. As much as possible, I wrote the Presenter to only rely on receiving data.",
           "Frontend, Backend, DB, and Stories servers are all managed as Docker containers. To make it more efficient, I've automated the build deployment of each server with a single command using shell scripts and docker-compose."
+        ]
+      },
+      {
+        "title": "Picture In Picture From Korea Extension",
+        "source": "https://github.com/VVSOGI/picture-in-picture-from-korea",
+        "badges": ["chromeExtension", "Javascript"],
+        "description": "Extended version of Google Picture-in-Picture Extension",
+        "images": {
+          "grid": 3,
+          "list": [
+            { "url": "images/pip/pip-1.png", "alt": "Promo image" },
+            { "url": "images/pip/pip-2.gif", "alt": "Free change to Alt + P in any tab" }
+          ]
+        },
+        "contents": [
+          "This is a feature-extended version of the existing Google Picture-in-Picture Extension. The Google Picture-in-Picture Extension was modified and deployed in response to the inaccessibility of switching PIP mode because the shortcut key can only be entered from inside the selected tab.",
+          "To fix this issue, we added the TAB and STORAGE permissions to get access data for other tabs, and changed the way STORAGE is used to store and modify data for tabs that are using Picture-in-Picture mode. Because the permissions on TAB pose a security risk and require caution with this extension on the Chrome Web Store, we have released the source and placed restrictions on the sites that can switch to Picture-in-Picture mode.",
+          "All images required for deployment on the Chrome Web Store were created by hand using Figma",
+          "This extension is simply coded, but has much better usability than previous extensions."
         ]
       }
     ]
