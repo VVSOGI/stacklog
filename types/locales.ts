@@ -33,6 +33,7 @@ export interface LocaleHome {
 
 export interface LocaleProjects {
   list: {
+    page: string
     title: string
     source: string
     motivate: string
