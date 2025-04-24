@@ -50,8 +50,8 @@
         "images": {
           "grid": 2,
           "list": [
-            { "url": "images/doke/doke-example.png", "alt": "Doke" },
-            { "url": "images/doke/swagger-example.png", "alt": "Swagger" }
+            { "url": "/images/doke/doke-example.png", "alt": "Doke" },
+            { "url": "/images/doke/swagger-example.png", "alt": "Swagger" }
           ]
         },
         "contents": [
@@ -70,11 +70,11 @@
         "images": {
           "grid": 3,
           "list": [
-            { "url": "images/todolist/todolist-1.png", "alt": "category-1" },
-            { "url": "images/todolist/todolist-2.png", "alt": "category-2" },
-            { "url": "images/todolist/todolist-3.png", "alt": "todolist-1" },
-            { "url": "images/todolist/todolist-4.png", "alt": "todolist-2" },
-            { "url": "images/todolist/todolist-5.png", "alt": "testcase" }
+            { "url": "/images/todolist/todolist-1.png", "alt": "category-1" },
+            { "url": "/images/todolist/todolist-2.png", "alt": "category-2" },
+            { "url": "/images/todolist/todolist-3.png", "alt": "todolist-1" },
+            { "url": "/images/todolist/todolist-4.png", "alt": "todolist-2" },
+            { "url": "/images/todolist/todolist-5.png", "alt": "testcase" }
           ]
         },
         "contents": [
@@ -96,8 +96,8 @@
         "images": {
           "grid": 2,
           "list": [
-            { "url": "images/pip/pip-1.png", "alt": "Promo image" },
-            { "url": "images/pip/pip-2.gif", "alt": "어떤 탭에서도 Alt + P로 자유롭게" }
+            { "url": "/images/pip/pip-1.png", "alt": "Promo image" },
+            { "url": "/images/pip/pip-2.gif", "alt": "어떤 탭에서도 Alt + P로 자유롭게" }
           ]
         },
         "contents": [
@@ -116,9 +116,9 @@
         "images": {
           "grid": 2,
           "list": [
-            { "url": "images/sniff/sniff-1.png", "alt": "main" },
-            { "url": "images/sniff/sniff-2.png", "alt": "onboarding" },
-            { "url": "images/sniff/sniff-3.png", "alt": "architecture" }
+            { "url": "/images/sniff/sniff-1.png", "alt": "main" },
+            { "url": "/images/sniff/sniff-2.png", "alt": "onboarding" },
+            { "url": "/images/sniff/sniff-3.png", "alt": "architecture" }
           ]
         },
         "contents": [
