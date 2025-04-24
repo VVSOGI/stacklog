@@ -110,7 +110,7 @@
       {
         "title": "Sniff & Step",
         "source": "https://github.com/Minthug/Sniff-Step",
-        "badges": ["nextjs", "tailwind", "typescript", "docker", "shell"],
+        "badges": ["nextjs", "tailwind", "typescript", "docker", "shell", "aws"],
         "description": "Neighborhood-based dog walking platform",
         "motivate": "Let's create a platform for busy people who can't find time to walk their dogs",
         "images": {

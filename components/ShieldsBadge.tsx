@@ -1,4 +1,4 @@
-export type Badge = 'react' | 'nextjs' | 'nestjs' | 'docker' | 'jest' | 'typescript' | 'shell' | 'tailwind' | 'chromeExtension'
+export type Badge = 'react' | 'nextjs' | 'nestjs' | 'docker' | 'jest' | 'typescript' | 'shell' | 'tailwind' | 'chromeExtension' | 'aws'
 
 const badgeConfig: Record<Badge, { name: string; logo: string; logoColor?: string }> = {
   react: { name: 'React.js', logo: 'react' },
@@ -9,7 +9,8 @@ const badgeConfig: Record<Badge, { name: string; logo: string; logoColor?: strin
   typescript: { name: 'TypeScript', logo: 'typescript', logoColor: '3178C6' },
   shell: { name: 'Shell', logo: 'gnu-bash', logoColor: '4EAA25' },
   tailwind: { name: 'TailwindCSS', logo: 'tailwindcss', logoColor: '38B2AC' },
-  chromeExtension: { name: 'Chrome_Extension', logo: 'google-chrome', logoColor: 'white' }
+  chromeExtension: { name: 'Chrome_Extension', logo: 'google-chrome', logoColor: 'white' },
+  aws: { name: 'Amazon Web Service', logo: 'amazonwebservices', logoColor: 'ff9900' }
 }
 
 interface Props {
@@ -17,9 +18,14 @@ interface Props {
 }
 
 export function ShieldsBadge({ badges }: Props) {
+  const set: Set<Badge> = new Set()
+  for (const badge of badges) {
+    set.add(badge)
+  }
+
   return (
     <div className="flex flex-wrap gap-2 mb-8">
-      {badges.map((badgeKey) => {
+      {Array.from(set).map((badgeKey) => {
         const badge = badgeConfig[badgeKey] || {
           name: badgeKey,
           logo: 'javascript',
