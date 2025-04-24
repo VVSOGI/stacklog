@@ -102,9 +102,31 @@
         },
         "contents": [
           "This is a feature-extended version of the existing Google Picture-in-Picture Extension. The Google Picture-in-Picture Extension was modified and deployed in response to the inaccessibility of switching PIP mode because the shortcut key can only be entered from inside the selected tab.",
-          "To fix this issue, we added the TAB and STORAGE permissions to get access data for other tabs, and changed the way STORAGE is used to store and modify data for tabs that are using Picture-in-Picture mode. Because the permissions on TAB pose a security risk and require caution with this extension on the Chrome Web Store, we have released the source and placed restrictions on the sites that can switch to Picture-in-Picture mode.",
+          "To fix this issue, we added the TAB and stroage permissions to get access data for other tabs, and changed the way stroage is used to store and modify data for tabs that are using Picture-in-Picture mode. Because the permissions on TAB pose a security risk and require caution with this extension on the Chrome Web Store, we have released the source and placed restrictions on the sites that can switch to Picture-in-Picture mode.",
           "All images required for deployment on the Chrome Web Store were created by hand using Figma",
           "This extension is simply coded, but has much better usability than previous extensions."
+        ]
+      },
+      {
+        "title": "Sniff & Step",
+        "source": "https://github.com/Minthug/Sniff-Step",
+        "badges": ["nextjs", "tailwind", "typescript", "docker", "shell"],
+        "description": "Neighborhood-based dog walking platform",
+        "motivate": "Let's create a platform for busy people who can't find time to walk their dogs",
+        "images": {
+          "grid": 2,
+          "list": [
+            { "url": "images/sniff/sniff-1.png", "alt": "main" },
+            { "url": "images/sniff/sniff-2.png", "alt": "onboarding" },
+            { "url": "images/sniff/sniff-3.png", "alt": "architecture" }
+          ]
+        },
+        "contents": [
+          "This is a team project with two front and backend developers. We collaborated on the planning and initial API design, and I took the design work and front-end lead using Pygma",
+          "We improved the UX by using KAKAO Maps API for location-based service development, optimizing responsive design according to devices, and introducing Google SSO for membership signup and login. We received a green good score in Lighthouse's webpage quality measurement",
+          "We built a multilingual support system through middleware to ensure that the service is not limited to Koreans",
+          "We used Next js own server as a BFF server when requesting APIs from the front to the backend. This allows the backend to work on purely business logic-related tasks and avoids CORS errors. Also, third-party APIs can be accessed from the Next server, so we actively utilized the Next server.",
+          "The deployment was done through AWS, and we built the system so that we could deploy the frontend with a single line of command in the cloud environment via Docker and shell scripts."
         ]
       }
     ]

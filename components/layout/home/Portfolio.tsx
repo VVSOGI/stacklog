@@ -6,8 +6,16 @@ interface Props {
 }
 
 export function Portfolio({ portfolio }: Props) {
+  const imageOption: Record<number, string> = {
+    1: 'sm:grid-cols-1',
+    2: 'sm:grid-cols-2',
+    3: 'sm:grid-cols-3'
+  }
+
+  const column = imageOption[portfolio.images.grid] || 'sm:grid-cols-2'
+
   return (
-    <div className="mb-8">
+    <div className="mb-14">
       <div className="flex flex-col gap-2 mb-4">
         <a
           className={`
@@ -27,7 +35,7 @@ export function Portfolio({ portfolio }: Props) {
       <div
         className={`
           hidden
-          sm:grid sm:grid-cols-${portfolio.images.grid} sm:gap-4
+          sm:grid sm:gap-4 ${column}
         `}
       >
         {portfolio.images.list.map((image) => {
