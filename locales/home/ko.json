@@ -110,7 +110,7 @@
       {
         "title": "Sniff & Step",
         "source": "https://github.com/Minthug/Sniff-Step",
-        "badges": ["nextjs", "tailwind", "typescript", "docker", "shell"],
+        "badges": ["nextjs", "tailwind", "typescript", "docker", "shell", "aws"],
         "description": "동네 기반 반려견 산책 대행 플랫폼",
         "motivate": "반려견 산책 시간을 만들 수 없는 바쁜 현대인을 위한 플랫폼을 만들어보자",
         "images": {

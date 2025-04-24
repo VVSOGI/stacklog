@@ -1,6 +1,6 @@
 import { getLocales } from '@/utils/getLocales'
-import { LocaleHome, Locales } from '@/types'
 import { Career, Portfolio } from '@/components'
+import { LocaleHome, Locales } from '@/types'
 
 interface Props {
   params: { lang: Locales }
