@@ -40,6 +40,7 @@ export interface LocaleProjects {
     description: string
     images: { grid: number; list: { url: string; alt: string }[] }
     contents: string[]
+    createdAt: string
   }[]
 }
 
