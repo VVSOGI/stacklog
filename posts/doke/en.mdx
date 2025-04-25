@@ -1,0 +1,46 @@
+---
+title: 'Doke'
+source: 'https://github.com/vvsogi/doke'
+publishedAt: '2025-04-25'
+summary: 'An open source library for automatically documenting RESTful APIs'
+---
+
+![doke](/images/doke/doke-example.png)
+
+# What is Doke?
+
+Doke is a library that aims to automatically document RESTful APIs. A similar library is Swagger. While working on cross-company API documentation, I realized that Swagger was lacking in the UI aspect and saw a need for an alternative automated documentation tool, so I built it myself.
+
+The library uses Nest JS's Custom Decorator and Nest js's DiscoveryModule to automatically collect the data needed to create documentation. The user only needs to write a description of each endpoint and Request Parameters and run a command to get an API Docs page with a design favorable for external publication.
+
+## How is it different from Swagger?
+
+Swagger makes it difficult to modify a specific part of the UI or to understand the overall structure. The Swagger-ui library is built in React, but it still uses class-components, which we can now call legacy. Also, the code is written in JSX rather than TSX, which makes it somewhat less accessible to developers.
+
+![rc](/images/doke/class-components.png)
+
+Doke is written with the latest Next.js 15.2.0 syntax. This gives developers familiar with modern development environments the advantage of being able to easily understand it and customize it as needed.
+
+Swagger has the great advantage of providing out-of-the-box HTML, CSS, and JS via pre-packaged swagger-ui-dist for quick implementation. Doke, on the other hand, requires an initial build process based on Next.js, which will take some time to get your document server up and running for the first time. However, this initial time investment is rewarded with better SEO optimization, more intuitive customization possibilities, and the ability to leverage the latest technologies. In the end, Doke may be a better choice for projects that prioritize long-term flexibility and scalability over initial speed.
+&nbsp;
+
+## Provides CLI tools
+
+If a backend developer created a JSON file to pull up an API docs server via doke-nest, they would have to pass it to doke-ui to build on top of it. This process is cumbersome and reduces accessibility. As a solution to this problem, we created the doke-cli build CLI tool. When the Nest js server has a folder called api-docs in the root, it automatically serves a webapp built with next js to doke-ui in the root based on its contents.
+
+In this case, doke-cli will choose a standalone build rather than next build -> start. This greatly optimizes the build size, giving the user a standalone deployment package that contains only the minimum code and assets needed to run. This standalone approach has the benefit of building a self-contained executable environment without heavy node_modules dependencies, allowing it to run out of the box on any server environment with only Node.js installed.
+
+This is also great for containerization like docker. Minimal image size with unnecessary dependencies removed enables faster builds and deployments, and faster container startup times. This increases efficiency in CI/CD pipelines and makes it easier to manage API documentation servers as independent containers in microservice architectures.
+
+To allow you to opt-in to these benefits, doke-cli gives you the following choice on initial builds
+
+![doke-cli](/images/doke/doke-cli.png)
+
+At this point, if you create doke-ui with a docker environment, you can build doke-ui with a docker image. The following js webapp has an image size of about 1GB when built in a non-standalone way, whereas this method gives us a reduced image size of about 100MB.
+&nbsp;
+
+## Testing progress for doke-nest
+
+Currently, all modules of doke-nest have tests written in Jest, we have passed unit tests for 10 core functional modules and 5 real-world usage-based integration tests. In the future, we will be testing compatibility with different Node versions and Nestjs environments.
+
+<img style={{ width: '600px' }} src="/images/doke/doke-nest-test.png" />

@@ -1,6 +1,7 @@
 {
   "list": [
     {
+      "page": "doke",
       "title": "Doke",
       "source": "https://github.com/vvsogi/doke",
       "badges": ["nextjs", "nestjs", "typescript", "jest", "docker", "shell"],
@@ -23,6 +24,7 @@
       "createdAt": "2025-04-25"
     },
     {
+      "page": "todolist",
       "title": "Todolist remake",
       "source": "https://github.com/VVSOGI/todolist-remake",
       "badges": ["nextjs", "tailwind", "nestjs", "typia", "typescript", "jest", "docker", "shell"],
@@ -51,6 +53,7 @@
       "createdAt": "2025-04-25"
     },
     {
+      "page": "pip",
       "title": "Picture In Picture From Korea Extension",
       "source": "https://github.com/VVSOGI/picture-in-picture-from-korea",
       "badges": ["chromeExtension", "Javascript"],
@@ -72,6 +75,7 @@
       "createdAt": "2025-04-25"
     },
     {
+      "page": "sniff",
       "title": "Sniff & Step",
       "source": "https://github.com/Minthug/Sniff-Step",
       "badges": ["nextjs", "tailwind", "typescript", "docker", "shell", "aws"],
