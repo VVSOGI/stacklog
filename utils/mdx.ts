@@ -4,6 +4,7 @@ import path from 'path'
 
 type Metadata = {
   title: string
+  source?: string
   publishedAt: string
   summary: string
   image?: string
