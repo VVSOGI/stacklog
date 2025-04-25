@@ -18,6 +18,7 @@ export default async function Page({ params: { project, lang } }: Props) {
   return (
     <div>
       <h1 className="title font-semibold text-2xl tracking-tighter">{post.metadata.title}</h1>
+      <h6>{post.metadata.summary}</h6>
       <div className="flex flex-col justify-between gap-1 mt-2 mb-8">
         <a
           className={`
