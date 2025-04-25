@@ -1,0 +1,45 @@
+---
+title: 'Todolist remake'
+source: 'https://github.com/VVSOGI/todolist-remake'
+publishedAt: '2025-04-25'
+summary: '주기적 코드 실력 검증 및 엄격한 테스트 환경 구현해보기'
+---
+
+![todolist](/images/todolist/todolist-3.png)
+
+# 이 프로젝트에 대해서
+
+'개발자는 이전에 만들었던 프로젝트를 한 번 다시 만들어보는 경험이 중요하다.' 투두리스트 웹앱은 스스로의 실력 평가를 위해서 종종 제작하는 프로젝트입니다. 이번 투두리스트는 2024년 말에 제작했으며, yarn을 활용한 모노 레포지토리 입니다. 프론트엔드는 Storybook을 활용한 컴포넌트 테스트 코드, 백엔드는 Jest + typia를 활용해 유닛 테스트를 더 엄격하게 적용했습니다.
+
+## Presenter Container 패턴
+
+Next.js 프로젝트에서 관심사 분리를 위해 Presenter Container 패턴을 도입했습니다. 각 페이지마다 'Display'라는 이름의 Presenter 컴포넌트를 생성하여 UI 렌더링을 담당하게 했으며, 데이터 처리와 비즈니스 로직은 custom hooks를 Container로 활용하여 분리했습니다. 이러한 구조를 통해 Presenter는 데이터를 전달받아 표시하는 역할만 수행하고, 데이터 fetching이나 상태 관리 같은 로직은 Container(custom hooks)에서 처리함으로써 컴포넌트 간 책임을 명확히 분리했습니다.
+&nbsp;
+
+## 스토리북과 프론트엔드의 UI components 공유 문제 해결을 위한 npm 패키지 분리
+
+프론트엔드는 프로젝트의 규모가 커짐에 따라 증가하는 전체 사이즈와 스토리북과의 UI 컴포넌트 공유 문제를 해결하기 위해 중복되는 코드를 패키지로 만들어서 관리하게 됐습니다. 프론트엔드와 스토리북은 npm에서 필요한 컴포넌트들을 install해서 사용하는 방식으로 변경되었습니다. 위의 과정에서 많은 양의 코드가 분리되었기에 프론트엔드 도커 빌드 시간을 38.6% 감소시킬 수 있었습니다.
+
+해당 결과에 대한 내용을 아래 232번 이슈에 작성해놨습니다.
+
+[Github Issue 232](https://github.com/VVSOGI/todolist-remake/issues/232)
+&nbsp;
+
+## PlantUML을 활용한 API 워크플로우 문서화
+
+서버에는 엔드포인트간 API 프로세스의 진행 과정을 시각화 하기 위해서 PlantUML을 통해 코드로써 작성되었습니다. 아래 링크는 카테고리 엔드포인트의 워크플로우입니다.
+
+[Plant UML category flow](https://github.com/VVSOGI/todolist-remake/blob/main/packages/server/docs/category/category.md)
+&nbsp;
+
+## Typia의 도입 배경과 효과
+
+Typia는 빌드 이후에도 실시간으로 타입을 체크할 수 있는 라이브러리입니다. 이 라이브러리를 도입한 주요 목적은 DTO 검증용 validator를 테스트용과 프로덕션용으로 분리하지 않고 단일 객체로 통합 관리하기 위함입니다. 기존 테스트 방식은 미리 예상 결과를 정해놓고 그에 맞게 코드를 작성하는 형태였습니다. 이러한 접근법은 테스트의 신뢰성과 가치를 저하시킵니다. 반면, 실제 사용자 데이터로 검증을 수행하는 동일한 객체를 테스트 대상으로 삼고, 이 검증 객체의 다양한 엣지 케이스를 철저히 테스트하는 것이 더 실질적인 테스트 방법이라고 판단했습니다.
+
+Typia를 통해 실제 운영 환경에서 사용되는 DTO 검증 객체에 대한 테스트와 다양한 엣지 케이스를 검증했으며, 그 결과 41개의 추가 테스트 케이스를 더 엄격하게 검증할 수 있었습니다. 테스트 케이스 수가 증가함에 따라 서버 동작의 신뢰성이 향상되므로, 테스트 커버리지와 서버 안정성은 비례 관계를 가진다고 볼 수 있습니다.
+
+![test](/images/todolist/todolist-test.png)
+
+## Docker를 활용한 배포 자동화
+
+프로젝트 인프라는 PostgreSQL 데이터베이스, 백엔드 서버, 프론트엔드 클라이언트, 스토리북 서버를 모두 Docker 컨테이너로 관리하고 있습니다. Docker Compose를 활용하여 서비스를 infra, services, development 프로필로 분류하고, 모든 컨테이너는 동일 네트워크(todolist)로 연결되어 상호 통신이 가능하도록 설계했습니다. shell scripts deploy-local.sh, deploy-production.sh를 통해 환경에 따른 명령어를 구분했습니다. 이러한 시스템은 개발 생산성 향상과 배포 프로세스의 안정성이 크게 개선 되었습니다.

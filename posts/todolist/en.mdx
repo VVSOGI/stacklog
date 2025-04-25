@@ -1,0 +1,45 @@
+---
+title: 'Todolist remake'
+source: 'https://github.com/VVSOGI/todolist-remake'
+publishedAt: '2025-04-25'
+summary: 'Implement a periodic code proficiency validation and rigorous testing environment'
+---
+
+![todolist](/images/todolist/todolist-3.png)
+
+# About this project
+
+“It's important for developers to have the experience of recreating a project they've made before.” The TODOLIST web app is a project that people often make to evaluate their skills. This TODOLIST was made in late 2024 and is a mono repository using yarn. The frontend is component-tested code using Storybook, and the backend is more rigorously unit-tested using Jest + typia.
+
+## Presenter Container Pattern
+
+In the Next.js project, we adopted the Presenter Container pattern for separation of concerns. For each page, we created a Presenter component named 'Display' to be in charge of UI rendering, and separated data processing and business logic by utilizing custom hooks as Containers. With this structure, Presenter is only responsible for receiving and displaying data, and logic such as data fetching and state management is handled by Containers (custom hooks) to clearly separate responsibilities between components.
+&nbsp;
+
+## Separate npm packages to solve the problem of sharing UI components between Storybook and Frontend
+
+The frontend was packaged to manage duplicate code to address the growing overall size of the project and the issue of sharing UI components with the storybook. The frontend and storybook switched to installing and using the components they needed from npm. The above process decoupled a large amount of code, and we were able to reduce the frontend docker build time by 38.6%.
+
+I've written about these results in issue 232 below.
+
+[Github Issue 232](https://github.com/VVSOGI/todolist-remake/issues/232)
+&nbsp;
+
+## Documenting API workflows with PlantUML
+
+In order to visualize the progress of the API process between endpoints on the server, the code was written using PlantUML. The link below is the workflow for the category endpoint.
+
+[Plant UML category flow](https://github.com/VVSOGI/todolist-remake/blob/main/packages/server/docs/category/category.md)
+&nbsp;
+
+## Why Typia and how it works
+
+Typia is a library that allows type checking in real-time, even after build. The main purpose of introducing this library is to consolidate validators for DTO validation into a single object instead of separating them for testing and production. The traditional approach to testing is to determine the expected outcome in advance and write code accordingly, which reduces the reliability and value of the test. On the other hand, we decided that a more practical way to test would be to test against the same object that is being validated with real user data, and to thoroughly test various edge cases of this validated object.
+
+With Typia, we tested against the DTO validation object used in production and validated various edge cases, resulting in 41 additional test cases that we were able to validate more rigorously. As the number of test cases increases, the reliability of server behavior increases, so we can see that test coverage and server reliability have a proportional relationship.
+
+![test](/images/todolist/todolist-test.png)
+
+## Automating deployments with Docker
+
+In our project infrastructure, the PostgreSQL database, backend server, frontend client, and storybook server are all managed as Docker containers. We utilized Docker Compose to categorize our services into infra, services, and development profiles, and all containers are connected to the same network (todolist) so that they can communicate with each other. We used the shell scripts deploy-local.sh and deploy-production.sh to separate commands for different environments. This system has greatly improved our development productivity and the reliability of our deployment process.

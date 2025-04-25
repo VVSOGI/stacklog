@@ -48,7 +48,8 @@ html {
 }
 
 .prose a {
-  @apply underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em];
+  @apply underline transition-all text-blue-600 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em];
+  @apply hover:text-blue-300 active:text-blue-600;
 }
 
 .prose .anchor:after {
