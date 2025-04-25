@@ -1,40 +1,6 @@
 import { notFound } from 'next/navigation'
 import { CustomMDX } from '@/components/mdx'
-import { formatDate, getBlogPosts } from '@/app/[lang]/blog/utils'
-
-export async function generateStaticParams() {
-  let posts = getBlogPosts()
-
-  return posts.map((post) => ({
-    slug: post.slug
-  }))
-}
-
-export function generateMetadata({ params }) {
-  let post = getBlogPosts().find((post) => post.slug === params.slug)
-  if (!post) {
-    return
-  }
-
-  let { title, publishedAt: publishedTime, summary: description, image } = post.metadata
-
-  return {
-    title,
-    description,
-    openGraph: {
-      title,
-      description,
-      type: 'article',
-      publishedTime,
-      images: [{}]
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description
-    }
-  }
-}
+import { formatDate, getBlogPosts } from '@/utils/mdx'
 
 export default function Blog({ params }) {
   let post = getBlogPosts().find((post) => post.slug === params.slug)
