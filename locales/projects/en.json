@@ -29,7 +29,7 @@
       "description": "Extended version of Google Picture-in-Picture Extension",
       "motivate": "Google Picture-in-Picture Extension could be better with tabs and storage",
       "banner": "/images/pip/pip-2.gif",
-      "createdAt": "2025-04-25"
+      "createdAt": "2025-04-30"
     },
     {
       "page": "sniff",
@@ -39,7 +39,7 @@
       "description": "Neighborhood-based dog walking platform",
       "motivate": "Let's create a platform for busy people who can't find time to walk their dogs",
       "banner": "/images/sniff/sniff-4.png",
-      "createdAt": "2025-04-25"
+      "createdAt": "2025-05-01"
     }
   ]
 }
