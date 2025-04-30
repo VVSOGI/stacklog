@@ -1,0 +1,39 @@
+---
+title: 'Sniff & Step'
+source: 'https://github.com/Minthug/Sniff-Step'
+publishedAt: '2025-05-01'
+summary: 'Let's create a platform for busy people who can't find time to walk their dogs'
+---
+
+<img className="thumbnail" style={{ width: '100%', objectFit: 'contain' }} src="/images/sniff/sniff-1.png" />
+
+# What is this project?
+
+This is a team project with my brother and I, actually. We were thinking about what we wanted to do with our project, and we realized that dogs play an emotionally important role in modern life and what people are looking for in a service for their dogs, so we decided to create a dog walking service. We collaborated on the planning and initial API design, and I took the lead on the design and front-end using Pygma.
+
+## Features?
+
+We improved the UX by using the KAKAO Maps API for location-based service development, optimizing responsive design for different devices, and introducing Google SSO for membership signup and login. We received a green good score in Lighthouse's webpage quality measurement. We built a multilingual support system through middleware to ensure that the service is not limited to Koreans.
+
+We used Next js' own server as a BFF server when making API requests from the front to the backend. This allows the backend to work on purely business logic-related tasks and avoids CORS errors. We also actively utilized the Next server because third-party APIs can also be accessed from the Next server.
+
+To reduce the deployment process, we also wrote deployment automation shell scripts that work with Docker to enable deployment with a single command, which we will later use in conjunction with the Github Actions CI CD.
+
+## Explanation of the architecture
+
+We have Nginx, frontend, backend, and database managed in Docker containers on AWS EC2. Requests to each service are directed to internal local services using Nginx's reverse proxy, and the services communicate internally through the Docker network. Logs from each service are continuously accumulated through Nginx. We use Ubuntu's logrotate to check the size of the logs by date, and if it is higher than the set size, we write the date to the log and save it under a different name. If it exceeds 14 files, I remove them one by one in order of oldest data.
+
+The domain was purchased through Route 53, and the SSL certificate was purchased through Gabia. The SSL and domain connections were applied using Nginx.
+
+Static data is being managed through S3, which is not currently shown in the figure, but we are serving images through the cloud front when calling data. This hides the structure of the buckets and allows us to serve the data to the user faster.
+
+<img style={{ width: '100%', objectFit: 'contain' }} src="/images/sniff/sniff-3.png" />
+
+## How did we communicate?
+
+We used Slack for simple scheduling and information sharing, and Notions for more detailed scheduling. We created a sprint Kanban board and divided it into Backlog, In progress, and Complete to manage our schedule. For issues that we thought would be helpful to each other during the project, we created a table called Issue Share, detailing the issue, when it occurred, and how it was resolved. We finalized the project when we had over 60 Kanban boards.
+
+<div style={{ display: 'flex', gap: '16px' }}>
+  <img style={{ flex: 1, width: '50%', height: '100%' }} src="/images/sniff/sniff-5.png" />
+  <img style={{ flex: 1, width: '50%', height: '100%' }} src="/images/sniff/sniff-6.png" />
+</div>
