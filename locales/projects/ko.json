@@ -29,7 +29,7 @@
       "description": "Google Picture-in-Picture Extension 기능 확장 버전",
       "motivate": "Google Picture-in-Picture Extension는 tab과 storage를 사용하면 더 발전할 수 있다",
       "banner": "/images/pip/pip-2.gif",
-      "createdAt": "2025-04-25"
+      "createdAt": "2025-04-30"
     },
     {
       "page": "sniff",
@@ -39,7 +39,7 @@
       "description": "동네 기반 반려견 산책 대행 플랫폼",
       "motivate": "반려견 산책 시간을 만들 수 없는 바쁜 현대인을 위한 플랫폼을 만들어보자",
       "banner": "/images/sniff/sniff-4.png",
-      "createdAt": "2025-04-25"
+      "createdAt": "2025-05-01"
     }
   ]
 }
