@@ -1,3 +1,5 @@
+import { DetailedHTMLProps, HTMLAttributes } from 'react'
+
 export type Badge = 'react' | 'nextjs' | 'nestjs' | 'docker' | 'jest' | 'typescript' | 'shell' | 'tailwind' | 'chromeExtension' | 'aws'
 
 const badgeConfig: Record<Badge, { name: string; logo: string; logoColor?: string }> = {
@@ -13,18 +15,18 @@ const badgeConfig: Record<Badge, { name: string; logo: string; logoColor?: strin
   aws: { name: 'Amazon Web Service', logo: 'amazonwebservices', logoColor: 'ff9900' }
 }
 
-interface Props {
+interface Props extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   badges: Badge[]
 }
 
-export function ShieldsBadge({ badges }: Props) {
+export function ShieldsBadge({ badges, ...props }: Props) {
   const set: Set<Badge> = new Set()
   for (const badge of badges) {
     set.add(badge)
   }
 
   return (
-    <div className="flex flex-wrap gap-2 mb-8">
+    <div {...props} className="flex flex-wrap gap-2 mb-8">
       {Array.from(set).map((badgeKey) => {
         const badge = badgeConfig[badgeKey] || {
           name: badgeKey,

@@ -1,0 +1,36 @@
+---
+title: 'Picture In Picture From Korea Extension'
+source: 'https://github.com/VVSOGI/picture-in-picture-from-korea'
+publishedAt: '2025-04-30'
+summary: 'Google Picture-in-Picture Extension는 tab과 storage를 사용하면 더 발전할 수 있다'
+---
+
+<img style={{ width: '100%', height: '350px', objectFit: 'contain', margin: '60px 0 !important' }} src="/images/pip/pip-2.gif" />
+
+# 이 프로젝트는 무엇인가?
+
+기존에 있던 Google Picture-in-Picture Extension의 기능 확장 버전입니다. Google Picture-in-Picture Extension을 사용하던 중 빠르게 플로팅 동영상 화면을 온/오프 전환을 할 수 있으면 더 좋겠다라는 생각이 들었습니다. 이에 대한 기능 제공 요청을 해당 깃헙 이슈로 올리려고 했지만, 그때 당시 최근 커밋이 2년 전이었던 것을 감안해 직접 만들어서 배포해 사용하는 것이 더 빠르겠다는 생각으로 만들었습니다.
+
+## Picture-in-Picture는 무엇인가?
+
+Picture-in-Picture란 항상 상단에 표시되는 플로팅 동영상 화면을 만들 수 있는 HTMLVideoElement API 입니다. 이 기능을 사용하면 위에 GIF에서 보이는 것 처럼 재생되고 있는 video 태그를 화면의 상단에 띄어놓을 수 있습니다. PIP 모드로 전환된 화면은 브라우저 밖에서도 재생되기에 다른 작업창을 띄워놓고 영상을 소비할 수 있습니다.
+
+## 기존 익스텐션의 문제점
+
+Google Picture-in-Picture Extension은 선택한 탭 내부에서만 단축키가 입력이 가능하여 PIP 모드 전환 단축키가 동영상이 재생되고 있는 특정 탭에서만 동작한다는 문제점이 있습니다. 플로팅된 화면을 닫으려면 따라서 동영상 재생이 되고있는 탭에서 단축키를 이용하거나 플로팅 화면의 X버튼을 눌러서 종료를 하기 혹은 플로팅 화면 가운데의 탭으로 돌아가기 버튼을 눌러야합니다.
+
+<img style={{ width: '100%', objectFit: 'contain', marginTop: '30px !important' }} src="/images/pip/pip-3.png" />
+<div style={{ width: '100%', textAlign: 'center' }}>
+  <div style={{ marginTop: '4px', color: '#4b5563', fontSize: '12px' }}>플로팅 화면의 X / 탭으로 돌아가기</div>
+</div>
+
+이렇게 되면 단축키의 기능은 있으나 대부분의 유저는 단축키를 사용하지 않을 것 이라고 생각이 들었습니다.
+
+## 어떻게 해결?
+
+해당 문제를 해결하기 위해서 tab, storage permissions를 추가하여 다른 탭에 대한 접근 데이터를 가져왔고, storage로 Picture-in-Picture 모드를 사용중인 탭에 대한 데이터를 저장 및 수정할 수 있도록 바꿨습니다. tab에 대한 권한은 보안적인 위험 요소가 있기에 크롬 웹스토어에서 해당 익스텐션에 대한 주의를 필요로 하기 때문에 소스를 공개하였고 Picture-In-Picture 모드로 전환할 수 있는 사이트에 제한을 걸었습니다.
+
+<a href="https://chromewebstore.google.com/detail/picture-in-picture-from-k/ohmhbgphjbplnmoflfenimhadficecoo" target="_blank">
+  <img style={{ width: '100%', objectFit: 'contain', marginTop: '30px !important' }} src="/images/pip/pip-4.png" />
+</a>
+크롬 웹스토어에 배포할 때 사용한 이미지는 모두 직접 피그마를 통해서 제작했습니다.
