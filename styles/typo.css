@@ -1,10 +1,6 @@
 @import 'tailwindcss';
 
 @layer components {
-  .text-something {
-    @apply text-6xl;
-  }
-
   h1 {
     @apply text-4xl font-medium tracking-tighter;
     @apply lg:text-6xl;
