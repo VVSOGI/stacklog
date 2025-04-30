@@ -15,9 +15,6 @@ export async function Navbar({ locales }: Props) {
     },
     '/projects': {
       name: project
-    },
-    '/blog': {
-      name: blog
     }
   }
 
