@@ -1,0 +1,36 @@
+---
+title: 'Picture In Picture From Korea Extension'
+source: 'https://github.com/VVSOGI/picture-in-picture-from-korea'
+publishedAt: '2025-04-30'
+summary: 'Google Picture-in-Picture Extension could be better with tabs and storage'
+---
+
+<img style={{ width: '100%', height: '350px', objectFit: 'contain', margin: '60px 0 !important' }} src="/images/pip/pip-2.gif" />
+
+# What is this project?
+
+This is a feature-extended version of the existing Google Picture-in-Picture Extension. While using the Google Picture-in-Picture Extension, I realized that it would be nice to be able to quickly toggle a floating video screen on and off. I was going to raise a feature request for this as a GitHub issue, but since the last commit was 2 years old, I figured it would be faster to build it myself and get it up and running.
+
+## What is Picture-in-Picture?
+
+Picture-in-Picture is an HTMLVideoElement API that allows you to create a floating video screen that is always on top. With this feature, you can float the video tag that is playing at the top of the screen, like you see in the GIF above. The PIPed screen also plays outside of the browser, so you can open another window to consume the video.
+
+## Problems with the existing extension
+
+The problem with the Google Picture-in-Picture Extension is that shortcuts can only be entered from within the selected tab, so the PIP mode toggle shortcut only works in the specific tab where the video is playing. To close the floating screen, you have to either use the shortcut in the tab where the video is playing, or press the X button on the floating screen to exit, or press the return to tab button in the center of the floating screen.
+
+<img style={{ width: '100%', objectFit: 'contain', marginTop: '30px !important' }} src="/images/pip/pip-3.png" />
+<div style={{ width: '100%', textAlign: 'center' }}>
+  <div style={{ marginTop: '4px', color: '#4b5563', fontSize: '12px' }}>Back to X / Tab on Floating Screen</div>
+</div>
+
+This way, the shortcut is functional, but most users will not use it.
+
+## How to solve?
+
+To solve the problem, we added tab, storage permissions to get access data for other tabs, and storage to store and modify data for tabs that are using Picture-in-Picture mode. Since the tab permission is a security risk and the Chrome Web Store needs to be careful with this extension, we released the source and restricted the sites that can switch to Picture-in-Picture mode.
+
+<a href="https://chromewebstore.google.com/detail/picture-in-picture-from-k/ohmhbgphjbplnmoflfenimhadficecoo" target="_blank">
+  <img style={{ width: '100%', objectFit: 'contain', marginTop: '30px !important' }} src="/images/pip/pip-4.png" />
+</a>
+The images we used to deploy to the Chrome Web Store were all created by hand via Pigma.
