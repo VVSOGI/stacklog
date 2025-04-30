@@ -17,7 +17,7 @@ export default function RootLayout({ children, params }: { children: React.React
         <main className="flex-auto min-w-0 flex flex-col px-2 md:px-0">
           <Navbar locales={params.lang} />
           {children}
-          <Footer />
+          <Footer locales={params.lang} />
           <Analytics />
           <SpeedInsights />
         </main>

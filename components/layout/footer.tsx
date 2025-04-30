@@ -1,5 +1,6 @@
 import { HTMLAttributeAnchorTarget } from 'react'
 import { ArrowIcon } from '..'
+import { Locales } from '@/types'
 
 interface Anchor {
   target: HTMLAttributeAnchorTarget
@@ -7,9 +8,16 @@ interface Anchor {
   title: string
 }
 
-const list: Anchor[] = [{ target: '_blank', href: 'https://github.com/vvsogi', title: 'github' }]
+interface Props {
+  locales: Locales
+}
 
-export function Footer() {
+export function Footer({ locales }: Props) {
+  const list: Anchor[] = [
+    { target: '_blank', href: 'https://github.com/vvsogi', title: 'github' },
+    { target: '_self', href: locales === 'en' ? '/ko' : '/en', title: locales === 'en' ? 'Korea' : 'English' }
+  ]
+
   return (
     <footer className="mb-16">
       <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">
