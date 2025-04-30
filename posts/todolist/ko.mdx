@@ -5,7 +5,7 @@ publishedAt: '2025-04-25'
 summary: '주기적 코드 실력 검증 및 엄격한 테스트 환경 구현해보기'
 ---
 
-![todolist](/images/todolist/todolist-3.png)
+<img style={{ width: '100%', height: '400px', objectFit: 'contain' }} src="/images/todolist/todolist-3.png" />
 
 # 이 프로젝트에 대해서
 
@@ -16,7 +16,7 @@ summary: '주기적 코드 실력 검증 및 엄격한 테스트 환경 구현�
 Next.js 프로젝트에서 관심사 분리를 위해 Presenter Container 패턴을 도입했습니다. 각 페이지마다 'Display'라는 이름의 Presenter 컴포넌트를 생성하여 UI 렌더링을 담당하게 했으며, 데이터 처리와 비즈니스 로직은 custom hooks를 Container로 활용하여 분리했습니다. 이러한 구조를 통해 Presenter는 데이터를 전달받아 표시하는 역할만 수행하고, 데이터 fetching이나 상태 관리 같은 로직은 Container(custom hooks)에서 처리함으로써 컴포넌트 간 책임을 명확히 분리했습니다.
 &nbsp;
 
-## 스토리북과 프론트엔드의 UI components 공유 문제 해결을 위한 npm 패키지 분리
+## 스토리북과 프론트엔드의 UI components 중복 문제 해결을 위한 npm 패키지 분리
 
 프론트엔드는 프로젝트의 규모가 커짐에 따라 증가하는 전체 사이즈와 스토리북과의 UI 컴포넌트 공유 문제를 해결하기 위해 중복되는 코드를 패키지로 만들어서 관리하게 됐습니다. 프론트엔드와 스토리북은 npm에서 필요한 컴포넌트들을 install해서 사용하는 방식으로 변경되었습니다. 위의 과정에서 많은 양의 코드가 분리되었기에 프론트엔드 도커 빌드 시간을 38.6% 감소시킬 수 있었습니다.
 

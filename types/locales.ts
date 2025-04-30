@@ -32,6 +32,7 @@ export interface LocaleHome {
 }
 
 export interface LocaleProjects {
+  title: string
   list: {
     page: string
     title: string
@@ -39,8 +40,7 @@ export interface LocaleProjects {
     motivate: string
     badges: Badge[]
     description: string
-    images: { grid: number; list: { url: string; alt: string }[] }
-    contents: string[]
+    banner: string
     createdAt: string
   }[]
 }
