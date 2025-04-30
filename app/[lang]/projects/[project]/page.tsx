@@ -36,7 +36,7 @@ export default async function Page({ params: { project, lang } }: Props) {
         </a>
         <p className="text-sm text-neutral-600">{formatDate(post.metadata.publishedAt)}</p>
       </div>
-      <ShieldsBadge badges={locale.list.find((portfolio) => portfolio.page === project)?.badges || []} />
+      <ShieldsBadge className="mb-16" badges={locale.list.find((portfolio) => portfolio.page === project)?.badges || []} />
       <article className="prose">
         <CustomMDX source={post.content} />
       </article>
