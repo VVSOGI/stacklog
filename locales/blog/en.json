@@ -1,0 +1,12 @@
+{
+  "title": "Post",
+  "list": [
+    {
+      "page": "canvas-data-structure",
+      "title": "The importance of choosing a data structure in canvas animation",
+      "description": "When objects change quickly in an animation, deleting an element from the data structure should not affect other items.",
+      "banner": "/images/sniff/sniff-4.png",
+      "createdAt": "2025-05-12"
+    }
+  ]
+}

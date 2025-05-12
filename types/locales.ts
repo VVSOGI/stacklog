@@ -2,7 +2,7 @@ import { Badge } from '@/components'
 
 export type Locales = 'en' | 'ko'
 
-export type Pages = 'home' | 'nav' | 'projects'
+export type Pages = 'home' | 'nav' | 'projects' | 'blog'
 
 export interface LocaleHome {
   job: string
@@ -39,6 +39,17 @@ export interface LocaleProjects {
     source: string
     motivate: string
     badges: Badge[]
+    description: string
+    banner: string
+    createdAt: string
+  }[]
+}
+
+export interface LocaleBlog {
+  title: string
+  list: {
+    page: string
+    title: string
     description: string
     banner: string
     createdAt: string
