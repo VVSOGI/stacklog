@@ -52,10 +52,10 @@ function getMDXData(dir) {
 }
 
 export function getBlogPosts() {
-  return getMDXData(path.join(process.cwd(), 'posts'))
+  return getMDXData(path.join(process.cwd(), 'blog'))
 }
 
-export function getProjectPosts(project: string, locale: Locales) {
+export function getProjectPosts(project: string) {
   return getMDXData(path.join(process.cwd(), 'posts', project))
 }
 

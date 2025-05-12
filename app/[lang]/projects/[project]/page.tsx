@@ -11,7 +11,7 @@ interface Props {
 }
 
 export default async function Page({ params: { project, lang } }: Props) {
-  const post = getProjectPosts(project, lang).find((post) => post.slug === lang)
+  const post = getProjectPosts(project).find((post) => post.slug === lang)
   const locale = await getLocales<LocaleProjects>('projects', lang)
 
   if (!post) {

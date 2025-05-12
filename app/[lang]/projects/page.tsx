@@ -20,14 +20,13 @@ export default async function Page({ params: { lang } }: Props) {
       >
         {locale.list.map((project) => {
           return (
-            <a key={project.title} href={`/${lang}/projects/${project.page}`} className="h-fit flex flex-col gap-2 pb-8 cursor-pointer">
+            <a key={project.title} href={`/${lang}/projects/${project.page}`} className="h-fit flex flex-col gap-2 pb-4 cursor-pointer">
               <img className="object-contain w-full h-[300px]" src={project.banner} alt={project.banner} />
               <div className="flex flex-col">
                 <h5 className="font-medium">{project.title}</h5>
                 <p className="text-gray-600">{project.motivate}</p>
               </div>
               <div className="flex items-center gap-2">
-                <p className="text-sm text-green-800">POST</p>
                 <p className="text-sm text-gray-500">{formatDate(project.createdAt)}</p>
               </div>
             </a>
