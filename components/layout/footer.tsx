@@ -15,7 +15,7 @@ interface Props {
 export function Footer({ locales }: Props) {
   const list: Anchor[] = [
     { target: '_blank', href: 'https://github.com/vvsogi', title: 'github' },
-    { target: '_self', href: locales === 'en' ? '/ko' : '/en', title: locales === 'en' ? 'Korea' : 'English' }
+    { target: '_self', href: locales === 'en' ? '/ko' : '/en', title: locales === 'en' ? 'Korean' : 'English' }
   ]
 
   return (

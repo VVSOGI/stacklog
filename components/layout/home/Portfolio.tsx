@@ -1,11 +1,12 @@
 import { ShieldsBadge } from '@/components'
-import { LocaleHome } from '@/types'
+import { LocaleHome, Locales } from '@/types'
 
 interface Props {
+  lang: Locales
   portfolio: LocaleHome['portfolio']['list'][number]
 }
 
-export function Portfolio({ portfolio }: Props) {
+export function Portfolio({ lang, portfolio }: Props) {
   const imageOption: Record<number, string> = {
     1: 'sm:grid-cols-1',
     2: 'sm:grid-cols-2',
@@ -23,7 +24,7 @@ export function Portfolio({ portfolio }: Props) {
             hover:text-blue-400
             active:text-blue-500
           `}
-          href={portfolio.source}
+          href={`/${lang}/${portfolio.source}`}
           target="_blank"
         >
           {portfolio.title}
