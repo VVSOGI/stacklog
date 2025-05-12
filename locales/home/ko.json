@@ -32,7 +32,7 @@
         {
           "title": "Mozilla hubs Elixir 기반 서버 API 작업 및 짐벌락 에러 해결",
           "contents": [
-            "Spoke(React 3D 메타버스 공간 제작 툴)를 사용하지 않고 gltf 파일과 컴포넌트 ID, Z값 만으로 해당 컴포넌트의 3D Asset을 변경시키는 기능 추가. 작업 중 3D 컴포넌트가 180도 뒤집어져 생성이 되는 에러 발견. 이 에러는 기존 spoke에서 오일러 각을 기반 컴포넌트를 저장할 때는 쿼터니안 각으로 저장하기 때문에 발생한 문제. 오일러 각을 쿼터니안 각으로 변경시키는 함수 추가 후 문제 해결."
+            "Spoke(React 3D 메타버스 공간 제작 툴)를 사용하지 않고 gltf 파일과 컴포넌트 ID, Z값 만으로 해당 컴포넌트의 3D Asset을 변경시키는 기능 추가. 작업 중 3D 컴포넌트가 180도 뒤집어져 생성이 되는 에러 발견. 기존 spoke에서 오일러 각 기반 컴포넌트를 저장할 때 쿼터니안 각으로 저장 해주는 로직이 있음을 발견. 따라서 spoke를 통하지 않고 오일러 각으로 데이터를 저장했을 때 그 컴포넌트를 보여주는 Hubs(3D 공간)에서 뒤집히는 문제. 저장 전에 오일러 각을 쿼터니안 각으로 변경시키는 함수 추가 후 문제 해결."
           ]
         }
       ]
@@ -43,7 +43,7 @@
     "list": [
       {
         "title": "Doke (도케)",
-        "source": "https://github.com/vvsogi/doke",
+        "source": "/projects/doke",
         "badges": ["nextjs", "nestjs", "typescript", "jest", "docker", "shell"],
         "description": "RESTful API 자동 문서화 오픈소스 라이브러리",
         "motivate": "Swagger를 뛰어넘는 자동 문서화 오픈소스 라이브러리를 제작해보자",
@@ -63,7 +63,7 @@
       },
       {
         "title": "Todolist remake",
-        "source": "https://github.com/VVSOGI/todolist-remake",
+        "source": "/projects/todolist",
         "badges": ["nextjs", "tailwind", "nestjs", "typia", "typescript", "jest", "docker", "shell"],
         "description": "모노 레포지토리 투두리스트 웹앱",
         "motivate": "주기적 코드 실력 검증 및 엄격한 테스트 환경 구현해보기",
@@ -89,7 +89,7 @@
       },
       {
         "title": "Picture In Picture From Korea Extension",
-        "source": "https://github.com/VVSOGI/picture-in-picture-from-korea",
+        "source": "/projects/pip",
         "badges": ["chromeExtension", "Javascript"],
         "description": "Google Picture-in-Picture Extension 기능 확장 버전",
         "motivate": "Google Picture-in-Picture Extension는 tab과 storage를 사용하면 더 발전할 수 있다",
@@ -109,7 +109,7 @@
       },
       {
         "title": "Sniff & Step",
-        "source": "https://github.com/Minthug/Sniff-Step",
+        "source": "/projects/sniff",
         "badges": ["nextjs", "tailwind", "typescript", "docker", "shell", "aws"],
         "description": "동네 기반 반려견 산책 대행 플랫폼",
         "motivate": "반려견 산책 시간을 만들 수 없는 바쁜 현대인을 위한 플랫폼을 만들어보자",
