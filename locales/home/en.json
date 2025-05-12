@@ -31,7 +31,7 @@
         {
           "title": "Working with Mozilla hubs Elixir-based server APIs and resolving gimbalock errors",
           "contents": [
-            "Added the ability to change a component's 3D Asset without using Spoke (a React 3D metaverse space creation tool), using only a gltf file, component ID, and Z-value. Found an error that caused 3D components to be flipped 180 degrees during operation. This error was caused by the existing spoke saving components based on Euler angles, but saving them as quaternionic angles. Added a function to change Euler angles to Quaternian angles and fixed the issue."
+            "Added the ability to change a component's 3D Asset without using Spoke (React 3D metaverse space creation tool), using only a gltf file, component ID, and Z-value. Found an error that caused 3D components to be flipped 180 degrees while working. Discovered that when saving an Eulerian angle-based component from an existing spoke, there is logic to save it as a quaternionic angle. Therefore, when saving data as an Eulerian angle without using a spoke, the component would be flipped in the Hubs (3D space) showing the component. Added a function to change Euler angles to Quaternian angles before saving and fixed the issue."
           ]
         }
       ]
