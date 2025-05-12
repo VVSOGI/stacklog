@@ -4,4 +4,70 @@ publishedAt: '2025-05-12'
 summary: 'When objects change quickly in an animation, deleting an element from the data structure should not affect other items.'
 ---
 
-writing..
+<img
+  className="thumbnail"
+  style={{ width: '100%', objectFit: 'contain', marginTop: '60px !important' }}
+  src="/images/blog/sheep/sheep-2.png"
+/>
+<div style={{ width: '100%', textAlign: 'center', marginTop: '4px', color: '#4b5563', fontSize: '12px' }}>
+  {`Sheep walking down a hill (can grab when clicked the sheep)`}
+</div>
+
+## What is it?
+
+I recently saw a video by Interactive Developer Jongmin Kim on YouTube, and I tried to clone it. It's a simple animation of a sheep walking down a hill from the right side of the screen to the left side, and it's a good project to develop problem-solving skills as a front-end developer. In doing so, you'll learn how to draw a hill by dividing the entire screen into n randomly generated Y values, and how to use a formula to find a Quadratic Bezier Curve to make the sheep follow the hill.
+
+I also added some image sprite techniques and FPS concepts to make the sheep walk naturally, and I added a cute little flailing behavior when I caught them walking. To use image sprite techniques again, I asked a friend of mine who is an art student to provide me with an 8 frame image of the flailing. In the photo above, the sheep is floating alone in the air and I grabbed it with my mouse and that's what happened.
+
+## Problem
+
+Overall, the code was working fine - the hill was set to disappear from the array when it left the coordinates I had set, and the sheep was set to disappear from the array when it left the left screen, so the sheep wasn't constantly invisible on the screen. However, I noticed that the sheep would occasionally flicker while I was still watching the screen.
+
+<img className="thumbnail" style={{ width: '100%', objectFit: 'contain' }} src="/images/blog/sheep/sheep-3.gif" />
+<div style={{ width: '100%', textAlign: 'center', marginTop: '4px', color: '#4b5563', fontSize: '12px' }}>
+  {`It's hard to see, but when the leftmost sheep disappears, the third sheep from the left flickers.`}
+</div>
+
+Once I started looking at the problem in different ways, I realized that when a sheep disappeared, the remaining sheep were being affected by the disappearing sheep. I analyzed the cause and found two cascading reasons.
+
+- Sheep have different speeds (the one behind may leave first)
+- The data structure that manages the sheep objects is an array.
+
+Below is the code written at the time to indicate when a sheep disappears or is drawn.
+
+```javascript
+for (let i = 0; i < this.sheeps.length; i++) {
+  const item = this.sheeps[i]
+  if (item.x < -item.imgWidth) {
+    this.sheeps.splice(i, 1)
+  } else {
+    item.draw(ctx, t, dots, this.mouseX, this.mouseY)
+  }
+}
+```
+
+## Characteristics of arrays
+
+The nature of arrays is that the elements are stored consecutively in memory, so when the earliest element in the array is removed, all the elements behind it must be rearranged to the front. The structure we have now is such that the earliest element in the array always disappears first. While we're not drawing a lot, reorganizing the structure of the material in a fast-moving animation was definitely going to have an impact.
+
+## Solution.
+
+Recognizing the problem, it was immediately obvious which material structure to choose. We chose the Set material structure, which allows us to access the sheep that need to disappear quickly while they are being drawn. Because of the nature of Sets, the disappearance of one amount will not indirectly affect the others, so this would be the quickest and most efficient way to solve the problem.
+
+Below is a modified version of the code above.
+
+```javascript
+for (const sheep of this.sheeps) {
+  if (sheep.x < -sheep.sheepWidth) this.sheeps.delete(sheep)
+  sheep.draw(ctx, t, dots, this.mouseX, this.mouseY)
+}
+```
+
+It has been changed from a baseline of 0, where the amount disappears from the screen, to deleting the amount with delete when it advances as far as the image of the amount.
+
+<img className="thumbnail" style={{ width: '100%', objectFit: 'contain' }} src="/images/blog/sheep/sheep-4.gif" />
+<div style={{ width: '100%', textAlign: 'center', marginTop: '4px', color: '#4b5563', fontSize: '12px' }}>
+  {`The sheep no longer flickers when it disappears to the left.`}
+</div>
+
+It's a simple animation task, but I realized that a complacent choice of material structure can lead to bugs, so if I have a task like this in the future, I'll be sure to choose the material structure that holds my objects carefully!
