@@ -1,4 +1,3 @@
-import { Locales } from '@/types'
 import fs from 'fs'
 import path from 'path'
 
@@ -51,11 +50,11 @@ function getMDXData(dir) {
   })
 }
 
-export function getBlogPosts() {
-  return getMDXData(path.join(process.cwd(), 'posts'))
+export function getBlogPosts(post: string) {
+  return getMDXData(path.join(process.cwd(), 'blog', post))
 }
 
-export function getProjectPosts(project: string, locale: Locales) {
+export function getProjectPosts(project: string) {
   return getMDXData(path.join(process.cwd(), 'posts', project))
 }
 

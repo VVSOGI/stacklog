@@ -1,0 +1,12 @@
+{
+  "title": "개발 포스팅",
+  "list": [
+    {
+      "page": "canvas-data-structure",
+      "title": "캔버스 애니메이션에서 자료 구조 선택의 중요성",
+      "description": "캠퍼스 애니메이션 요소를 다루는 데 자료구조로 배열을 선택했을 때 발생할 수 있는 문제점",
+      "banner": "/images/blog/sheep/sheep-1.png",
+      "createdAt": "2025-05-12"
+    }
+  ]
+}
