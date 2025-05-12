@@ -43,7 +43,7 @@
     "list": [
       {
         "title": "Doke (도케)",
-        "source": "https://github.com/vvsogi/doke",
+        "source": "/projects/doke",
         "badges": ["nextjs", "nestjs", "typescript", "jest", "docker", "shell"],
         "description": "RESTful API 자동 문서화 오픈소스 라이브러리",
         "motivate": "Swagger를 뛰어넘는 자동 문서화 오픈소스 라이브러리를 제작해보자",
@@ -63,7 +63,7 @@
       },
       {
         "title": "Todolist remake",
-        "source": "https://github.com/VVSOGI/todolist-remake",
+        "source": "/projects/todolist",
         "badges": ["nextjs", "tailwind", "nestjs", "typia", "typescript", "jest", "docker", "shell"],
         "description": "모노 레포지토리 투두리스트 웹앱",
         "motivate": "주기적 코드 실력 검증 및 엄격한 테스트 환경 구현해보기",
@@ -89,7 +89,7 @@
       },
       {
         "title": "Picture In Picture From Korea Extension",
-        "source": "https://github.com/VVSOGI/picture-in-picture-from-korea",
+        "source": "/projects/pip",
         "badges": ["chromeExtension", "Javascript"],
         "description": "Google Picture-in-Picture Extension 기능 확장 버전",
         "motivate": "Google Picture-in-Picture Extension는 tab과 storage를 사용하면 더 발전할 수 있다",
@@ -109,7 +109,7 @@
       },
       {
         "title": "Sniff & Step",
-        "source": "https://github.com/Minthug/Sniff-Step",
+        "source": "/projects/sniff",
         "badges": ["nextjs", "tailwind", "typescript", "docker", "shell", "aws"],
         "description": "동네 기반 반려견 산책 대행 플랫폼",
         "motivate": "반려견 산책 시간을 만들 수 없는 바쁜 현대인을 위한 플랫폼을 만들어보자",
