@@ -34,7 +34,7 @@ In order to visualize the progress of the API process between endpoints on the s
 
 ## Why Typia and how it works
 
-Typia is a library that allows type checking in real-time, even after build. The main purpose of introducing this library is to consolidate validators for DTO validation into a single object instead of separating them for testing and production. The traditional approach to testing is to determine the expected outcome in advance and write code accordingly, which reduces the reliability and value of the test. On the other hand, we decided that a more practical way to test would be to test against the same object that is being validated with real user data, and to thoroughly test various edge cases of this validated object.
+Typia is a library that allows you to validate TypeScript's pure type definitions at runtime, delivering performance up to 20,000 times faster than class-validators. It works by letting the TypeScript compiler analyze types and automatically generate optimized validation code, eliminating the possibility of mismatches between type definitions and validation logic without the need to define schemas or decorators.
 
 With Typia, we tested against the DTO validation object used in production and validated various edge cases, resulting in 41 additional test cases that we were able to validate more rigorously. As the number of test cases increases, the reliability of server behavior increases, so we can see that test coverage and server reliability have a proportional relationship.
 
